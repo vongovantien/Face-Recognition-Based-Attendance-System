@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>W3.CSS Template</title>
+    <title>SCamAI System</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -10,13 +10,13 @@
     <style>
         html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </style>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
 </head>
 <body class="w3-light-grey mt-5">
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large " style="z-index:4">
-    <b class="align-center font-weight-bold" style="font-size: 30px; text-align: center; padding: 25px">Hệ thống điểm
-        danh cho học sinh
-        trung học phổ thông</b>
+    <b class="align-center font-weight-bold" style="font-size: 30px; text-align: center; padding: 25px">SCamAI System</b>
     <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i
             class="fa fa-bars"></i>  Menu
     </button>
@@ -68,7 +68,7 @@
             <div class="w3-container w3-red w3-padding-16">
                 <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
                 <div class="w3-right">
-                    <h3>52</h3>
+                    <h3 id = "random1">52</h3>
                 </div>
                 <div class="w3-clear"></div>
                 <h4>Messages</h4>
@@ -78,7 +78,7 @@
             <div class="w3-container w3-blue w3-padding-16">
                 <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
                 <div class="w3-right">
-                    <h3>99</h3>
+                    <h3 id="random2">99</h3>
                 </div>
                 <div class="w3-clear"></div>
                 <h4>Views</h4>
@@ -88,7 +88,7 @@
             <div class="w3-container w3-teal w3-padding-16">
                 <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
                 <div class="w3-right">
-                    <h3>23</h3>
+                    <h3 id="random3">23</h3>
                 </div>
                 <div class="w3-clear"></div>
                 <h4>Shares</h4>
@@ -98,7 +98,7 @@
             <div class="w3-container w3-orange w3-text-white w3-padding-16">
                 <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
                 <div class="w3-right">
-                    <h3>50</h3>
+                    <h3 id="random4">50</h3>
                 </div>
                 <div class="w3-clear"></div>
                 <h4>Users</h4>
@@ -239,10 +239,26 @@
       overlayBg.style.display = "none";
     }
 
+    function displayRandomNumbers() {
+        // Generate three random numbers between 0 and 100
+        var randomNumber1 = Math.floor(Math.random() * 101);
+        var randomNumber2 = Math.floor(Math.random() * 101);
+        var randomNumber3 = Math.floor(Math.random() * 101);
+        var randomNumber4 = Math.floor(Math.random() * 101);
+
+        // Display the random numbers in their respective 'randomNumberDisplay' elements
+        document.getElementById('random1').innerHTML = randomNumber1;
+        document.getElementById('random2').innerHTML = randomNumber2;
+        document.getElementById('random3').innerHTML = randomNumber3;
+        document.getElementById('random4').innerHTML = randomNumber4;
+    }
+
+    // Call the function when the page loads
+    window.onload = displayRandomNumbers;
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
-
 </body>
 </html>
