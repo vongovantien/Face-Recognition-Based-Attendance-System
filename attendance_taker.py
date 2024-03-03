@@ -11,6 +11,7 @@ import cv2
 import dlib
 import numpy as np
 import pandas as pd
+import psycopg2
 
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587
@@ -62,13 +63,22 @@ predictor = dlib.shape_predictor('data/data_dlib/shape_predictor_68_face_landmar
 face_reco_model = dlib.face_recognition_model_v1("data/data_dlib/dlib_face_recognition_resnet_model_v1.dat")
 
 # Create a connection to the database
-conn = sqlite3.connect("attendance.db")
+# Thay thế các thông số sau bằng thông tin của cơ sở dữ liệu PostgreSQL của bạn
+dbname = "tvmjqhoc"
+user = "tvmjqhoc"
+password = "RgOxjyMaN0PMiaDlzU1ZWG6S14N3Lypi"
+host = "rain.db.elephantsql.com"
+
+# Tạo chuỗi kết nối
+conn_string = f"dbname='{dbname}' user='{user}' password='{password}' host='{host}'"
+# Kết nối đến cơ sở dữ liệu PostgreSQL
+conn = psycopg2.connect(conn_string)
 cursor = conn.cursor()
 
 # Create a table for the current date
 current_date = datetime.datetime.now().strftime("%Y_%m_%d")  # Replace hyphens with underscores
 table_name = "attendance"
-create_table_sql = f"CREATE TABLE IF NOT EXISTS {table_name} (name TEXT, time TEXT, date DATE, image BLOB, UNIQUE(name, date))"
+create_table_sql = f"CREATE TABLE IF NOT EXISTS {table_name} (name TEXT, time TEXT, date DATE, image BYTEA, UNIQUE(name, date))"
 cursor.execute(create_table_sql)
 
 # Commit changes and close the connection
@@ -215,36 +225,44 @@ class Face_Recognizer:
         current_time = datetime.datetime.now().strftime('%H:%M:%S')
 
         # Connect to the SQLite database
-        conn = sqlite3.connect("attendance.db")
+        conn = psycopg2.connect(conn_string)
         cursor = conn.cursor()
 
         # Attempt to insert the new attendance record
         try:
+            # Assuming conn is your PostgreSQL connection object
+            cursor = conn.cursor()
+
             # Check for existing record
-            cursor.execute("SELECT * FROM attendance WHERE name = ? AND date = ?", (name, current_date))
+            query = "SELECT * FROM attendance WHERE name = %s AND date = %s"
+            cursor.execute(query, (name, current_date))
             result = cursor.fetchone()
+            print(result)
 
             if result is not None:
                 # Record exists, update it
                 print("Record with the same name and date already exists.")
-                cursor.execute("""
-                        UPDATE attendance
-                        SET time = ?, image = ?
-                        WHERE name = ? AND date = ?
-                    """, (current_time, image_binary, name, current_date))
+                update_query = """
+                    UPDATE attendance
+                    SET time = %s, image = %s
+                    WHERE name = %s AND date = %s
+                """
+                cursor.execute(update_query, (current_time, image_binary, name, current_date))
                 print("Record updated.")
             else:
                 # No existing record, insert new one
-                cursor.execute("""
-                        INSERT INTO attendance (name, time, date, image)
-                        VALUES (?, ?, ?, ?)
-                    """, (name, current_time, current_date, image_binary))
+                insert_query = """
+                    INSERT INTO attendance (name, time, date, image)
+                    VALUES (%s, %s, %s, %s)
+                """
+                cursor.execute(insert_query, (name, current_time, current_date, image_binary))
                 print("New record inserted.")
 
             conn.commit()
 
-        except sqlite3.IntegrityError:
+        except psycopg2.IntegrityError as e:
             print(f"{name} is already marked as present for {current_date}.")
+            print(e)
         finally:
             # Close the cursor and database connection
             cursor.close()
