@@ -10,13 +10,14 @@
     <style>
         html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </style>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 </head>
 <body class="w3-light-grey mt-5">
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large " style="z-index:4">
-    <b class="align-center font-weight-bold" style="font-size: 30px; text-align: center; padding: 25px">SCamAI System</b>
+    <b class="align-center font-weight-bold" style="font-size: 30px; text-align: center; padding: 25px">SCamAI
+        System</b>
     <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i
             class="fa fa-bars"></i>  Menu
     </button>
@@ -57,114 +58,19 @@
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
-
     <!-- Header -->
     <header class="w3-container" style="padding-top:22px">
         <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
     </header>
-
-    <div class="w3-row-padding w3-margin-bottom">
-        <div class="w3-quarter">
-            <div class="w3-container w3-red w3-padding-16">
-                <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
-                <div class="w3-right">
-                    <h3 id = "random1">52</h3>
-                </div>
-                <div class="w3-clear"></div>
-                <h4>Messages</h4>
-            </div>
-        </div>
-        <div class="w3-quarter">
-            <div class="w3-container w3-blue w3-padding-16">
-                <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
-                <div class="w3-right">
-                    <h3 id="random2">99</h3>
-                </div>
-                <div class="w3-clear"></div>
-                <h4>Views</h4>
-            </div>
-        </div>
-        <div class="w3-quarter">
-            <div class="w3-container w3-teal w3-padding-16">
-                <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
-                <div class="w3-right">
-                    <h3 id="random3">23</h3>
-                </div>
-                <div class="w3-clear"></div>
-                <h4>Shares</h4>
-            </div>
-        </div>
-        <div class="w3-quarter">
-            <div class="w3-container w3-orange w3-text-white w3-padding-16">
-                <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-                <div class="w3-right">
-                    <h3 id="random4">50</h3>
-                </div>
-                <div class="w3-clear"></div>
-                <h4>Users</h4>
-            </div>
-        </div>
-    </div>
-
-    <div class="w3-panel">
-        <div class="w3-row-padding" style="margin:0 -16px">
-            <div class="w3-third">
-                <h5><b>Regions</b></h5>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3364456967215!2d106.70363597476646!3d10.78552295902643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ff3e61386b1%3A0x72361dbd1cae4b57!2zVHLGsOG7nW5nIEPDoW4gQuG7mSBRdeG6o24gTMO9IEdpw6FvIEThu6VjIFRow6BuaCBQaOG7kSBI4buTIENow60gTWluaA!5e0!3m2!1svi!2s!4v1709365013779!5m2!1svi!2s"
-                        width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="w3-twothird">
-                <h5><b>Feeds</b></h5>
-                <table class="w3-table w3-striped w3-white">
-                    <tr>
-                        <td><i class="fa fa-user w3-text-blue w3-large"></i></td>
-                        <td>New record, over 90 views.</td>
-                        <td><i>10 mins</i></td>
-                    </tr>
-                    <tr>
-                        <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
-                        <td>Database error.</td>
-                        <td><i>15 mins</i></td>
-                    </tr>
-                    <tr>
-                        <td><i class="fa fa-users w3-text-yellow w3-large"></i></td>
-                        <td>New record, over 40 users.</td>
-                        <td><i>17 mins</i></td>
-                    </tr>
-                    <tr>
-                        <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
-                        <td>New comments.</td>
-                        <td><i>25 mins</i></td>
-                    </tr>
-                    <tr>
-                        <td><i class="fa fa-bookmark w3-text-blue w3-large"></i></td>
-                        <td>Check transactions.</td>
-                        <td><i>28 mins</i></td>
-                    </tr>
-                    <tr>
-                        <td><i class="fa fa-laptop w3-text-red w3-large"></i></td>
-                        <td>CPU overload.</td>
-                        <td><i>35 mins</i></td>
-                    </tr>
-                    <tr>
-                        <td><i class="fa fa-share-alt w3-text-green w3-large"></i></td>
-                        <td>New shares.</td>
-                        <td><i>39 mins</i></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="w3-container">
-        <form action="/attendance" method="POST" id="attn-form">
-            <label for="selected_date"><b>Select Date:</b> </label>
+    <hr>
+    <div class="w3-container" >
+        <form action="/attendance" method="POST" id="attn-form" style="  display: flex;
+  justify-content: center; align-items:center">
+            <label for="selected_date"><b>Select Date: &nbsp;</b> </label>
             <input style="width: 200px; height: 40px;" type="date" id="selected_date" name="selected_date" required
                    value="{{ selected_date }}">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <label for="person_type"><b>Type: </b></label>
+            <label for="person_type"><b>Type: &nbsp;</b></label>
             <select name="person_type" id="person_type" style="width: 200px; height: 40px;">
                 <option value="unknown">Người lạ</option>
                 <option value="know">Người nhà</option>
@@ -202,17 +108,70 @@
         </table>
     </div>
     <hr>
-    <!-- Footer -->
-    <footer class="w3-container w3-padding-16 w3-light-grey">
-        <p style="text-align: right; font-size: 20px"><b>Team Member</b>:<br>
-            Võ Anh Trưởng 230101026<br>
-            Võ Ngô Văn Tiền 230201033<br>
-            Phạm Minh Dzuy 230201008<br>
-            Trần Văn Khánh 230201015<br>
-            Nguyễn Cẩm Hồng Phước 230201024</p>
-    </footer>
+    <!--    <div class="w3-row-padding w3-margin-bottom">-->
+    <!--        <div class="w3-quarter">-->
+    <!--            <div class="w3-container w3-red w3-padding-16">-->
+    <!--                <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>-->
+    <!--                <div class="w3-right">-->
+    <!--                    <h3 id="random1">52</h3>-->
+    <!--                </div>-->
+    <!--                <div class="w3-clear"></div>-->
+    <!--                <h4>Messages</h4>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <div class="w3-quarter">-->
+    <!--            <div class="w3-container w3-blue w3-padding-16">-->
+    <!--                <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>-->
+    <!--                <div class="w3-right">-->
+    <!--                    <h3 id="random2">99</h3>-->
+    <!--                </div>-->
+    <!--                <div class="w3-clear"></div>-->
+    <!--                <h4>Views</h4>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <div class="w3-quarter">-->
+    <!--            <div class="w3-container w3-teal w3-padding-16">-->
+    <!--                <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>-->
+    <!--                <div class="w3-right">-->
+    <!--                    <h3 id="random3">23</h3>-->
+    <!--                </div>-->
+    <!--                <div class="w3-clear"></div>-->
+    <!--                <h4>Shares</h4>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <div class="w3-quarter">-->
+    <!--            <div class="w3-container w3-orange w3-text-white w3-padding-16">-->
+    <!--                <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>-->
+    <!--                <div class="w3-right">-->
+    <!--                    <h3 id="random4">50</h3>-->
+    <!--                </div>-->
+    <!--                <div class="w3-clear"></div>-->
+    <!--                <h4>Users</h4>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
 
-    <!-- End page content -->
+    <div class="w3-panel">
+        <div class="w3-row-padding" style="margin:0 -16px; display: flex;
+  justify-content: space-around;">
+            <div class="w3-third">
+                <h5 style="font-size: 20px"><b>Regions</b></h5>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3364456967215!2d106.70363597476646!3d10.78552295902643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ff3e61386b1%3A0x72361dbd1cae4b57!2zVHLGsOG7nW5nIEPDoW4gQuG7mSBRdeG6o24gTMO9IEdpw6FvIEThu6VjIFRow6BuaCBQaOG7kSBI4buTIENow60gTWluaA!5e0!3m2!1svi!2s!4v1709365013779!5m2!1svi!2s"
+                        width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="w3-third">
+                <footer class="w3-container w3-light-grey">
+                    <p style="font-size: 20px"><b>Team Member</b>:<br>
+                        Võ Anh Trưởng 230101026<br>
+                        Võ Ngô Văn Tiền 230201033<br>
+                        Phạm Minh Dzuy 230201008<br>
+                        Trần Văn Khánh 230201015<br>
+                        Nguyễn Cẩm Hồng Phước 230201024</p>
+                </footer>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
